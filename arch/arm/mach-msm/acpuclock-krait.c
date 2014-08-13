@@ -50,6 +50,8 @@
 
 #define SECCLKAGD		BIT(4)
 
+#define FREQ_TABLE_SIZE		35
+
 int g_speed_bin;
 int g_pvs_bin;
 
@@ -922,7 +924,7 @@ void acpuclk_set_vdd(unsigned int khz, int vdd_uv) {
 #endif	/* CONFIG_CPU_VOTALGE_TABLE */
 
 #ifdef CONFIG_CPU_FREQ_MSM
-static struct cpufreq_frequency_table freq_table[NR_CPUS][35];
+static struct cpufreq_frequency_table freq_table[NR_CPUS][FREQ_TABLE_SIZE];
 
 static void __init cpufreq_table_init(void)
 {
